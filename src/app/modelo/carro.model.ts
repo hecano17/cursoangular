@@ -19,7 +19,7 @@ export class Carro{
    actualizarCantidad(producto: Producto,cantidad: number){
        let linea = this.lineas.find(l => l.producto.id == producto.id);
        if(linea != undefined){
-           linea.cantidad += cantidad;
+           linea.cantidad = Number(cantidad);
        }
        this.recalcular();
    }

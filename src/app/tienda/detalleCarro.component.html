@@ -1,0 +1,62 @@
+<div class="container-fluid">
+    <div class="row">
+       <div class="col bg-dark text-white">
+            <a class="nav-brand">Tienda Viajes</a>
+       </div>
+    </div>
+
+    <div class="row">
+        <div class="col mt-2">
+             <h2 class="text-center">Su Carro</h2>
+             <table class="table table-bordered table-striped p-2">
+                 <thead>
+                      <tr>
+                          <th>Cantidad</th>
+                          <th>Producto</th>
+                          <th class="text-right">Precio</th>
+                          <th class="text-right">Subtotal</th>
+                      </tr>
+                 </thead>
+                 <tbody>
+                     <tr *ngIf="carro.lineas.length == 0">
+                       <td colspan="4" class="text-center">
+                            Su carro esta Vacio
+                       </td>
+                     </tr>
+                     <tr *ngFor="let lin of carro.lineas">
+                        <td>
+                             <input type="number" class="form-control-sm" style="width: 5em"
+                             [value]="lin.cantidad" (change)="carro.actualizarCantidad(lin.producto,$event.target.value)">
+                        </td>
+                        <td>{{lin.producto.nombre}}</td>
+                        <td class="text-right">{{ lin.producto.precio}}</td>
+                        <td class="text-right">{{ lin.totalLinea}}</td>
+                        <td class="text-center">
+                            <button class="btn btn-sm btn-danger" (click)="carro.removerLinea(lin.producto.id)">
+                                     Eliminar
+                            </button>
+                        </td>
+                      </tr>
+                 </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" class="text-right">Total</td>
+                            <td class="text-right">{{carro.precioTotalCarro}}</td>
+                        </tr>
+                    </tfoot>
+             </table>
+        </div>
+    </div>
+<div class="row">
+     <div class="col">
+          <div class="text-center">
+              <button class="btn btn-primary m1" [routerLink]="['/tienda']"  >Seguir Comprando</button>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-primary m1" [routerLink]="['/checkout']" [disabled]="carro.lineas.length==0" >Pagar</button>
+        </div>
+     </div>
+</div>
+
+
+</div>
