@@ -3,8 +3,8 @@ import { Carro } from '../modelo/carro.model';
 
 
 @Component({
-   selector : "carrito",
-   templateUrl : "resumenCarro.component.html"
+    selector:"carrito",
+   templateUrl:"resumenCarro.component.html" 
  
 })
 

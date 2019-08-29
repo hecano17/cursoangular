@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ProductoRepositorio } from '../modelo/producto.repositorio';
 import { Producto } from '../modelo/producto.model';
+import { Carro } from '../modelo/carro.model';
+import { Router} from '@angular/router';
 
 @Component({
    selector:"tienda",
@@ -13,7 +15,10 @@ export class TiendaComponent{
      public productosPorPagina = 4;
      public paginaSeleccionada = 1;
 
-    constructor(private repositorio : ProductoRepositorio){
+    constructor(private repositorio : ProductoRepositorio,
+       private carro: Carro,
+       private router: Router
+       ){
   
     }
   
@@ -49,4 +54,11 @@ export class TiendaComponent{
          return Array(Math.ceil(this.repositorio.getProductos(this.categoriaSeleccionada).length/this.productosPorPagina))
          .fill(0).map((x, i)=> i+1);
     }
+
+agregarProductoAlCarro(producto: Producto){
+   this.carro.agregarLinea(producto);
+   this.router.navigateByUrl("/carro");
+}
+
+
    }

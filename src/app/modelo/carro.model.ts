@@ -3,17 +3,18 @@ import { Producto } from './producto.model';
 
 @Injectable()
 export class Carro{
-    public lineas: LineaCarro[];
+    public lineas: LineaCarro[] = [];
     public numeroItems: number = 0;
     public precioTotalCarro : number = 0;
 
-    agregarLinea(producto: Producto, cantidad: number){
-        let linea = this.lineas.find(lin => lin.producto.id == producto.id);
+    agregarLinea(producto: Producto, cantidad: number = 1){
+        let linea = this.lineas.find(l => l.producto.id == producto.id);
         if(linea != undefined){
             linea.cantidad += cantidad;
         }else{
             this.lineas.push(new LineaCarro(producto,cantidad))
         }
+        this.recalcular();
     }
    actualizarCantidad(producto: Producto,cantidad: number){
        let linea = this.lineas.find(l => l.producto.id == producto.id);

@@ -2,6 +2,7 @@
      <div class="row">
         <div class="col bg-dark text-white">
             <a class="navbar-brand">Tienda de Viajes</a>
+            <carrito></carrito>
         </div>
      </div>
      <div class="row ">
@@ -22,7 +23,11 @@
                          {{ producto.precio | currency:"USD":"symbol":"2.2-2"}}
                       </span>
                  </h4>  
-                 <div class="card-text bg-white p-1">{{ producto.descripcion}}</div>  
+                 <div class="card-text bg-white p-1">{{ producto.descripcion}}
+                    <button class="btn btn-success bt-sm float-right" (click)="agregarProductoAlCarro(producto)">
+                      agregar producto al carro  
+                  </button>
+                 </div>  
              </div>
             <div class="form-inline float-left mr-1">
                <select class = "form-control" [value]="productosPorPagina" (change)="cambiaProductosPorPagina($event.target.value)">
