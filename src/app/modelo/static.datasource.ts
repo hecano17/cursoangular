@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import { Producto } from "./producto.model";
 import {Observable, from} from "rxjs";
+import {Orden} from './orden.model'
 
 @Injectable()
 export class StaticDataSource{
@@ -19,12 +20,21 @@ export class StaticDataSource{
        new Producto(10,"Cama ", "Muebles", "Descripcion 1",1000),
        new Producto(11,"Chaqueta", "Ropa", "Descripcion 1",100),
        new Producto(12,"Pantalon", "Ropa", "Descripcion 1",100),
-       new Producto(13,"Abrigo", "Ropa", "Descripcion 1",100)
+       new Producto(13,"Abrigo", "Ropa", "Descripcion 1",100),
+       new Producto(14,"X-Box", "Electronica", "Descripcion 1",500),
+       new Producto(15,"Meson", "Muebles", "Descripcion 1",100),
+       new Producto(16,"polera", "Ropa", "Descripcion 1",100)
 
     ];
 
  getProductos():Observable<Producto[]>{
     return from([this.productos]);
+}
+
+grabarOrden(orden: Orden): Observable<Orden>{
+console.log();
+return from([orden]);
+
 }
 
 }

@@ -38,7 +38,7 @@ export class Carro{
    }
 
 
-   limpiarCaroo(){
+   limpiarCarro(){
        this.lineas = [];
        this.numeroItems = 0;
        this.precioTotalCarro =0;
