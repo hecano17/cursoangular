@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { TiendaComponent } from './tienda/tienda.component';
 import { DetalleCarroComponent } from './tienda/detalleCarro.component';
 import { CheckOutComponent } from './tienda/checkout.component';
+import { RutaTiendaGuard } from './rutaTienda.guard';
 
 
 
@@ -20,13 +21,14 @@ import { CheckOutComponent } from './tienda/checkout.component';
     AppRoutingModule,
     TiendaModule,
     RouterModule.forRoot([
-      {path:"tienda",component:TiendaComponent},
-      {path:"carro",component:DetalleCarroComponent},
-      {path:"checkout",component:CheckOutComponent},
+      
+      {path:"tienda",component:TiendaComponent,canActivate:[RutaTiendaGuard]},
+      {path:"carro",component:DetalleCarroComponent,canActivate:[RutaTiendaGuard]},
+      {path:"checkout",component:CheckOutComponent,canActivate:[RutaTiendaGuard]},
       {path:"**",component:TiendaComponent}
         ])
   ],
-  providers: [],
+  providers: [RutaTiendaGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
