@@ -1,0 +1,12 @@
+git init
+
+git config --global "usuario" 
+git config --global "correo"
+
+git remote add origin ruta 
+
+git add *
+
+git commit -m "lalamensaje"
+
+git push origin master
