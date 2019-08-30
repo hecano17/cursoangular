@@ -12,6 +12,7 @@ const PORT = 3500;
 @Injectable()
 export class RestDataSource{
      urlBase: string;
+     auth_token: string;
 
   constructor(private clienteHttp: HttpClient){
        this.urlBase = `${PROTOCOLO}://${location.hostname}:${PORT}/`;
@@ -28,7 +29,9 @@ export class RestDataSource{
 
  autentificar(nombreusuario:string, password:string): Observable<boolean>{
      return this.clienteHttp.post<any>(this.urlBase + "login",
-     {name: nombreusuario, password: password});
+     {name: nombreusuario, password: password}).pipe(map(response => {
+        this.auth_token = response.succes ? response.token: null;
+        return response.succes }));
  }
 
 }
