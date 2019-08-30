@@ -23,7 +23,10 @@ export class StaticDataSource{
        new Producto(13,"Abrigo", "Ropa", "Descripcion 1",100),
        new Producto(14,"X-Box", "Electronica", "Descripcion 1",500),
        new Producto(15,"Meson", "Muebles", "Descripcion 1",100),
-       new Producto(16,"polera", "Ropa", "Descripcion 1",100)
+       new Producto(17,"Batidora", "LineaBlanca", "Descripcion 1",30),
+       new Producto(18,"Afiladora", "LineaBlanca", "Descripcion 1",100),
+       new Producto(19,"Gorro", "Ropa", "Descripcion 1",400),
+
 
     ];
 
@@ -32,7 +35,7 @@ export class StaticDataSource{
 }
 
 grabarOrden(orden: Orden): Observable<Orden>{
-console.log();
+console.log(JSON.stringify(orden));
 return from([orden]);
 
 }

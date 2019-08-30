@@ -14,6 +14,7 @@
              (click)="cambiaCategoria(cat)" [class.active]="cat == categoriaSeleccionada">
              {{ cat }}
            </button>
+           <button class="btn btn-block btn-danger m-t-3" [routerLink]="['/admin']" >admin</button>
         </div>
          <div class="col-4 bg-success p-2 p-2">
              <div *ngFor="let producto of productos" class="card m-1 p-1 bg-light">

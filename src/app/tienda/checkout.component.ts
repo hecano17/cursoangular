@@ -28,6 +28,7 @@ export class CheckOutComponent{
                     orden =>{
                         this.orden.limpiar();
                         this.enviado = true;
+                        this.ordenGenerada = true;
                     }
                 )
             }

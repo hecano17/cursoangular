@@ -4,11 +4,16 @@ import { ProductoRepositorio } from './producto.repositorio';
 import { Carro } from './carro.model';
 import { Orden } from './orden.model';
 import { OrdenRepositorio } from './orden.repositorio';
+import { HttpClientModule } from '@angular/common/http';  
+import { RestDataSource } from './rest.datasource';
 
 @NgModule(
     {
-       providers:[StaticDataSource,ProductoRepositorio, Carro,
-    Orden,OrdenRepositorio]
+        imports:[HttpClientModule],
+        providers:[StaticDataSource,ProductoRepositorio, Carro,
+         Orden,OrdenRepositorio,
+        {provide: StaticDataSource, useClass: RestDataSource}
+        ]
 
     }
 )

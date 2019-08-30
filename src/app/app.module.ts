@@ -25,6 +25,7 @@ import { RutaTiendaGuard } from './rutaTienda.guard';
       {path:"tienda",component:TiendaComponent,canActivate:[RutaTiendaGuard]},
       {path:"carro",component:DetalleCarroComponent,canActivate:[RutaTiendaGuard]},
       {path:"checkout",component:CheckOutComponent,canActivate:[RutaTiendaGuard]},
+      {path:"admin", loadChildren: "./admin/admin.module#AdminModule", canActivate: [RutaTiendaGuard]},
       {path:"**",component:TiendaComponent}
         ])
   ],
