@@ -26,4 +26,9 @@ export class RestDataSource{
      return this.clienteHttp.post<Orden>(this.urlBase + "ordenes", orden);
  }
 
+ autentificar(nombreusuario:string, password:string): Observable<boolean>{
+     return this.clienteHttp.post<any>(this.urlBase + "login",
+     {name: nombreusuario, password: password});
+ }
+
 }
