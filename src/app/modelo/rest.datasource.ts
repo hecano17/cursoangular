@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Producto } from './producto.model';
 import { Orden } from './orden.model';
+import { map} from 'rxjs/operators';
  
 
 const PROTOCOLO ="http";
