@@ -41,4 +41,8 @@ export class RestDataSource{
      grabarProducto(producto: Producto):Observable<Producto>{
          return this.clienteHttp.post<Producto>(this.urlBase + "productos",producto,this.getOpciones());
      }
+
+     actualizarProducto(producto: Producto):Observable<Producto>{
+  return this.clienteHttp.post<Producto>(`${this.urlBase}productos/${producto.id}`,producto,this.getOpciones());
+     }
 }
