@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { Orden } from './orden.model';
 import { StaticDataSource } from './static.datasource';
 import { Observable, from } from 'rxjs';
+import { RestDataSource } from './rest.datasource';
 
 @Injectable()
 
 export class OrdenRepositorio{
     private ordenes:Orden[]=[];
-    constructor(private dataSource:StaticDataSource){
+    constructor(private dataSource:RestDataSource){ //StaticDataSource
 
     }
 
@@ -19,4 +20,11 @@ export class OrdenRepositorio{
 
     }
 
+actualizarOrden(orden: Orden){
+   this.dataSource.actualizarOrden(orden);
+   }
+
+   eliminarOrden(id: number){
+   this.dataSource.eliminarOrden(id);
+     }
 }

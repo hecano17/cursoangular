@@ -43,6 +43,19 @@ export class RestDataSource{
      }
 
      actualizarProducto(producto: Producto):Observable<Producto>{
-  return this.clienteHttp.post<Producto>(`${this.urlBase}productos/${producto.id}`,producto,this.getOpciones());
+  return this.clienteHttp.put<Producto>(`${this.urlBase}productos/${producto.id}`,producto,this.getOpciones());
      }
+
+     eliminarProducto(id: number):Observable<Producto>{
+        return this.clienteHttp.delete<Producto>(`${this.urlBase}productos/${id}`,this.getOpciones());
+           }
+
+      eliminarOrden(id:number):Observable<Orden>{
+          return this.clienteHttp.delete<Orden>(`${this.urlBase}ordenes/${id}`,this.getOpciones());
+      }
+
+      actualizarOrden(orden:Orden):Observable<Orden>{
+        return this.clienteHttp.put<Orden>(`${this.urlBase}ordenes/${orden.id}`,orden,this.getOpciones());
+    }
+
 }
