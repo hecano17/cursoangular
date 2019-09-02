@@ -15,15 +15,22 @@ export class LoginComponent{
     public password: string;
     public mensajeError: string;
 
-    constructor(private router: Router, private auth:AuthService){
+    constructor(private route: Router, private auth:AuthService){
 
     }
 
     autentifica(form: NgForm){
         if(form.valid){
-            this.router.navigateByUrl("admin/operaciones");
+            this.auth.autentificar(this.nombreUsuario,this.password).
+            subscribe(response => {
+                if (response){
+                    this.route.navigateByUrl("admin/operaciones")
+                }
+            })
+
+            
         }else{
-            this.mensajeError = ("Datos Invalidos");
+            this.mensajeError = ("Datos Login Invalidos");
         }
     }
 }
