@@ -3,25 +3,25 @@ import { Carro } from './carro.model';
 
 @Injectable()
 export class Orden{
-    public id: number;
-    public nombre: string;
-    public direccion: string;
-    public region: string;
-    public zip: string;
-    public pais: string;
-    public email: string;
-    public enviado: boolean = false;
+    public id:number;
+    public nombre:string;
+    public direccion:string;
+    public region:string;
+    public zip:string;
+    public pais:string;
+    public email:string;
+    public enviado:boolean=false;
 
-    constructor( public carro: Carro){
+    constructor(public carro:Carro){
 
     }
 
-limpiar(){
-    this.id = null;
-    this.nombre = this.pais =this.direccion = this.region = null;
-    this.zip = this.zip = this.email = null;
-    this.enviado = false;
-    this.carro.limpiarCarro();
-}
+    limpiar(){
+        this.id=null;
+        this.nombre=this.pais=this.direccion=this.region=null;
+        this.zip=this.pais=this.email=null;
+        this.enviado=false;
+        this.carro.limpiarCarro();
+    }    
 
 }

@@ -1,24 +1,22 @@
 <div class="bg-info p-2 text-center text-white">
-   <h3>Administracion de Tienda de Viajes</h3>
+    <h3>Administracion de tienda de viajes</h3>
 </div>
-
-<div class="bg-danger mt-2 p-2 text-center text-white " *ngIf="mensajeError != null">
-{{ mensajeError }}
+<div class="bg-danger mt-2 text-center text-white" *ngIf="mensajeError!=null">
+    {{mensajeError}}
 </div>
-
 <div class="p-2">
-    <form novalidate #form="ngForm" (ngSubmit) = "autentifica(form)">
-      <div class="form-group">
-        <label>Usuario</label> 
-        <input class="form-control" name="nombreUsuario" [ngModel]="nombreUsuario" required />
-      </div>
-      <div class="form-group">
-            <label>Password</label> 
-            <input class="form-control" type="password" name="password" [ngModel]="password" required />
-      </div>
-      <div>
-            <button class="btn btn-secondary m-1" [routerLink]="['/']" >Volver</button>
-            <button class="btn btn-secondary m-1" [routerLink]="['submit']" >Login</button>
-      </div>
+    <form novalidate #form="ngForm" (ngSubmit)="autentifica(form)">
+        <div class="form-group">
+            <label>Usuario</label>
+            <input class="form-control" name="nombreUsuario" [ngModel]="nombreUsuario" required/>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input class="form-control" type="password" name="password" [ngModel]="password" required/>
+        </div>
+        <div>
+            <button class="btn btn-secondary m-1" routerLink="/">Volver</button>
+            <button class="btn btn-primary m-1" type="submit">Login</button>
+        </div>
     </form>
 </div>

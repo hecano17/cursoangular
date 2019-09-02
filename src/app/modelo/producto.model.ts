@@ -1,14 +1,9 @@
-export class Producto{
-
+export class Producto {
     constructor(
-   public id?: number,
-   public nombre?: string,
-   public categoria?: string,
-   public descripcion?: string,
-   public precio?: number){
-
-
-    }
-
+        public id?: number,
+        public nombre?: string,
+        public categoria?: string,
+        public descripcion?: string,
+        public precio?: number) { }
 
 }
