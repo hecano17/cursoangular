@@ -1,9 +1,10 @@
 import { Component } from "@angular/core";
 import { Route, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { AuthService } from '../modelo/auth.service';
 
 @Component({
-    selector:"carrito",
+    
     templateUrl:"login.component.html"
  
 })
@@ -14,7 +15,7 @@ export class LoginComponent{
     public password: string;
     public mensajeError: string;
 
-    constructor(private router: Router){
+    constructor(private router: Router, private auth:AuthService){
 
     }
 
