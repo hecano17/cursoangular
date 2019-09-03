@@ -1,0 +1,15 @@
+<table class="table table-sm table-striped">
+  <thead>
+      <tr>
+          <th>ID</th><th>Nombre</th><th>Categoria</th><th>Precio</th><th>Operacion</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let p of getProductos()">
+          <td>{{ p.id}}</td>
+          <td>{{ p.nombre}}</td>
+          <td>{{ p.categoria}}</td>
+          <td>{{ p.precio}} | currency: "CLP": "symbol"</td>
+      </tr>
+  </tbody>>
+</table>
