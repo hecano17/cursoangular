@@ -38,7 +38,7 @@ export class RestDataSource{
 
     private getOpciones(){
         return {
-            headers: new HttpHeaders({"Authorization":`Bearer<${this.auth_token}`})
+            headers: new HttpHeaders({"Authorization":`Bearer<${this.auth_token}>`})
         }
     }
 

@@ -1,4 +1,4 @@
-<table class="table table-sm tble-striped">
+<table class="table table-sm table-striped">
   <thead>
       <tr>
           <th>ID</th><th>Nombre</th><th>Categoria</th><th>Precio</th><th>Operacion</th>
@@ -11,11 +11,11 @@
           <td>{{ p.categoria}}</td>
           <td>{{ p.precio | currency: "CLP": "symbol":"2.2-2"}}</td>
           <td>
-              <button class="btn btn-sm btn-warning" 
-              [routerLink]="['/admin/operaciones/productos/editar',p.id]"> Editar</button>
+              <a class="btn btn-sm btn-warning" 
+              [routerLink]="['/admin/operaciones/productos/editar',p.id]"> Editar</a>
               <button class="btn btn-sm btn-danger" (click)="eliminarProducto(p.id)">Eliminar</button>
           </td>
       </tr>
-  </tbody>>
+  </tbody>
 </table>
-<button class="btn btn-primary" [routerLink]="['/admin/operaciones/productos/']">Agregar Nuevo Producto</button>
+<button class="btn btn-primary" routerLink="/admin/operaciones/productos/crear">Agregar Nuevo Producto</button>

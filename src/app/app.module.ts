@@ -11,6 +11,7 @@ import { DetalleCarroComponent } from './tienda/detalleCarro.component';
 import { CheckoutComponent } from './tienda/checkout.component';
 import { RutaTiendaGuard } from './rutaTienda.guard';
 
+
 @NgModule({
   declarations: [
     AppComponent
