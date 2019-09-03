@@ -13,42 +13,42 @@
 <form *ngIf="!ordenGenerada" #form="ngForm" novalidate (ngSubmit)="enviarOrden(form)" class="m-2">
     <div class="form-group">
         <label>Nombre</label>{{orden.nombre}}
-        <input class="form-control" #nombre="ngModel" name="nombre" [ngModel]="orden.nombre" required/>
+        <input class="form-control" #nombre="ngModel" name="nombre" [(ngModel)]="orden.nombre" required/>
         <span *ngIf="enviado && nombre.invalid" class="text-danger">
             Ingrese Nombre
         </span>
     </div>
     <div class="form-group">
             <label>Direccion</label>
-            <input class="form-control" #direccion="ngModel" name="direccion" [ngModel]="orden.direccion" required/>
+            <input class="form-control" #direccion="ngModel" name="direccion" [(ngModel)]="orden.direccion" required/>
             <span *ngIf="enviado && direccion.invalid" class="text-danger">
                 Ingrese Direccion
             </span>
         </div>
         <div class="form-group">
                 <label>Region</label>
-                <input class="form-control" #region="ngModel" name="region" [ngModel]="orden.region" required/>
+                <input class="form-control" #region="ngModel" name="region" [(ngModel)]="orden.region" required/>
                 <span *ngIf="enviado && region.invalid" class="text-danger">
                     Ingrese Region
                 </span>
             </div>
             <div class="form-group">
                     <label>Zip</label>
-                    <input class="form-control" #zip="ngModel" name="zip" [ngModel]="orden.zip" required/>
+                    <input class="form-control" #zip="ngModel" name="zip" [(ngModel)]="orden.zip" required/>
                     <span *ngIf="enviado && zip.invalid" class="text-danger">
                         Ingrese Zip
                     </span>
                 </div>
                 <div class="form-group">
                         <label>Pais</label>
-                        <input class="form-control" #pais="ngModel" name="pais" [ngModel]="orden.pais" required/>
+                        <input class="form-control" #pais="ngModel" name="pais" [(ngModel)]="orden.pais" required/>
                         <span *ngIf="enviado && pais.invalid" class="text-danger">
                             Ingrese Pais
                         </span>
                     </div>
                     <div class="form-group">
                             <label>email</label>
-                            <input class="form-control" #email="ngModel" name="email" [ngModel]="orden.email" required/>
+                            <input class="form-control" #email="ngModel" name="email" [(ngModel)]="orden.email" required/>
                             <span *ngIf="enviado && email.invalid" class="text-danger">
                                 Ingrese email
                             </span>

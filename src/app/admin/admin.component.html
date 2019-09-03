@@ -1,4 +1,21 @@
-<div class="bg-info p-2 text-white">
-    <h3>Zona de Admin</h3>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col bg-dark text-white">
+            <a class="navbar-brand">Tienda</a>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-3">
+            <button class="btn btn-outline-success btn-block" routerLink="/admin/operaciones/productos">Productos</button>
+            <button class="btn btn-outline-info btn-block" routerLink="/admin/operaciones/ordenes">Ordenes</button>
+            <button class="btn btn-outline-danger btn-block" (click)="logout()">Logout</button>
+
+        </div>
+        <div class="col-9">
+                <router-outlet></router-outlet>
+            </div>
+        
+    </div>
 
 </div>

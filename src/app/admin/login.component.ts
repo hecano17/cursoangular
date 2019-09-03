@@ -15,8 +15,8 @@ export class LoginComponent{
     
     autentifica(form:NgForm){
         if(form.valid){
-            this.nombreUsuario=form.controls.nombreUsuario.value;
-            this.password=form.controls.password.value;
+            //this.nombreUsuario=form.controls.nombreUsuario.value;
+            //this.password=form.controls.password.value;
             this.auth.autentificar(this.nombreUsuario,this.password).subscribe(response=>{if(response){
                 this.route.navigateByUrl("/admin/operaciones");
             }

@@ -1,5 +1,5 @@
 import { Producto } from './producto.model';
-import { StaticDataSource } from './static.datasource';
+//import { StaticDataSource } from './static.datasource';
 import { Injectable } from '@angular/core';
 import { RestDataSource } from './rest.datasource';
 
@@ -8,8 +8,8 @@ import { RestDataSource } from './rest.datasource';
 export class ProductoRepositorio{
     private productos:Producto[]=[];
     private categorias:string[]=[];
-
-    constructor(private datasource:RestDataSource){//StaticDataSource
+    //constructor(private datasource:StaticDataSource){
+        constructor(private datasource:RestDataSource){
         datasource.getProductos().subscribe(
             data => {
                 this.productos=data;
@@ -25,21 +25,27 @@ export class ProductoRepositorio{
         return this.productos.filter(p=>p.categoria==categoria || categoria==null) ;
 
     }
-    getProducto(id:number):Producto{
-        return this.productos.find(p=> p.id == id);
+    getProducto(identificador:number):Producto{
+        return this.productos.find(p=> p.id==identificador);
 
     }
     getCategorias(): string[]{
         return this.categorias;
     }
 
-    grabarProducto(producto: Producto){
-        if(producto.id == null || producto.id == 0){
-            this.datasource.grabarProducto(producto).
-            subscribe(p => this.productos.push(p));
+    grabarProducto(producto:Producto){
+        if(producto.id==null || producto==0){
+            this.datasource.grabarProducto(producto).subscribe(p=>this.productos.push(p));
         }else{
-            this.datasource.actualizarProducto(producto);
+            this.datasource.actualizarProducto(producto).subscribe(p => {this.productos.splice(this.productos.findIndex(p=>p.id==producto.id),1,producto);
+                });
         }
 
+    }
+
+    eliminarProducto(id:number){
+        this.datasource.eliminarProducto(id).subscribe(p=>{this.productos.splice(this.productos.findIndex(p=>p.id==id),1);
+        }            
+        )
     }
 }
