@@ -10,6 +10,8 @@ import { TiendaComponent } from './tienda/tienda.component';
 import { DetalleCarroComponent } from './tienda/detalleCarro.component';
 import { CheckoutComponent } from './tienda/checkout.component';
 import { RutaTiendaGuard } from './rutaTienda.guard';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { RutaTiendaGuard } from './rutaTienda.guard';
       {path:"checkout",component:CheckoutComponent,canActivate:[RutaTiendaGuard]},
       {path:"admin", loadChildren:"./admin/admin.module#AdminModule",canActivate:[RutaTiendaGuard]},
       {path:"**",component:TiendaComponent}
-    ])
+    ]),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [RutaTiendaGuard],
   bootstrap: [AppComponent]

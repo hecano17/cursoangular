@@ -1,0 +1,81 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "Santiago",
+            "categoria": "Capitales",
+            "descripcion": "Es una capital",
+            "precio": 500
+        },
+        {
+            "id": 2,
+            "nombre": "Berlin",
+            "categoria": "Capitales",
+            "descripcion": "Es una capital",
+            "precio": 300
+        },
+        {
+            "id": 3,
+            "nombre": "Londres",
+            "categoria": "Capitales",
+            "descripcion": "Es una capital",
+            "precio": 500
+        },
+        {
+            "id": 4,
+            "nombre": "Cordillera",
+            "categoria": "Excursion",
+            "descripcion": "Es una excursion",
+            "precio": 450
+        },
+        {
+            "id": 7,
+            "nombre": "Isla de Pascua",
+            "categoria": "Isla",
+            "descripcion": "Es una isla",
+            "precio": 500
+        },
+        {
+            "id": 8,
+            "nombre": "Antartica",
+            "categoria": "Excursion",
+            "descripcion": "Es una excursion",
+            "precio": 1000
+        },
+        {
+            "id": 9,
+            "nombre": "Groenlandia",
+            "categoria": "Isla",
+            "descripcion": "Es una isla",
+            "precio": 2500
+        },
+        {
+            "id": 10,
+            "nombre": "x1x1",
+            "categoria": "x1c",
+            "descripcion": "c1222",
+            "precio": "88888888"
+        },
+        {
+            "nombre": "asdasd",
+            "categoria": "sadsad",
+            "descripcion": "sadsad",
+            "precio": "33333",
+            "id": 11
+        },
+        {
+            "nombre": "nuevo",
+            "categoria": "nuevo",
+            "descripcion": "nuevo",
+            "precio": "111",
+            "id": 12
+        },
+        {
+            "nombre": "nuevo",
+            "categoria": "nuevo",
+            "descripcion": "nuevo",
+            "precio": "nuevo",
+            "id": 13
+        }
+    ]
+}

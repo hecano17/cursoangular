@@ -59,7 +59,7 @@
             </div>
             <div class="text-center">
                 <button class="btn btn-secondary m-1" routerLink="/checkout"
-                    [disabled]="carro.lineas.length==0">Checkout</button>
+                    [disabled]="carro.lineas.length==0 || conectado">{{ conectado ? 'Checkout': 'Sin conexion'}}</button>
             </div>
 
         </div>

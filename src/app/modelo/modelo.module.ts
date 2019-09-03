@@ -8,6 +8,7 @@ import { OrdenRepositorio } from './orden.repositorio';
 import { HttpClientModule } from '@angular/common/http';
 import { RestDataSource } from './rest.datasource';
 import { AuthService } from './auth.services';
+import { ConexionService } from './conexion.service';
 
 
 
@@ -17,7 +18,8 @@ import { AuthService } from './auth.services';
   imports: [
     HttpClientModule
   ],
-  providers: [StaticDataSource, ProductoRepositorio, Carro, Orden, OrdenRepositorio, { provide: StaticDataSource, useClass: RestDataSource },AuthService,RestDataSource]
+  providers: [StaticDataSource, ProductoRepositorio, Carro, Orden, OrdenRepositorio,
+     { provide: StaticDataSource, useClass: RestDataSource },AuthService,RestDataSource, ConexionService]
 
 })
 export class ModeloModule { }
